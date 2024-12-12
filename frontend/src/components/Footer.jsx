@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import { assets } from "../assets/assets";
 
 const Footer = () => {
@@ -38,6 +38,67 @@ const Footer = () => {
         <p className=" py-5 text-sm text-center">
           Copyright 2024@ forever.com - All Right Reserved.
         </p>
+      </div>
+    </div>
+  );
+};
+
+export default Footer;*/
+
+import React from "react";
+import white_logo from "../assets/white_logo.png";
+import Facebook from "../assets/Facebook.png"
+import Instagram from "../assets/Instagram.png"
+import X from "../assets/X.png"
+import Linkedin from "../assets/Linkedin.png"
+import Youtube from "../assets/Youtube.png"
+
+const Footer = () => {
+  const numberWords = [
+    "One",
+    "Two",
+    "Three",
+    "Four",
+    "Five",
+    "Six",
+    "Seven",
+    "Eight",
+    "Nine",
+    "Ten",
+    "Eleven",
+    "Twelve",
+    "Thirteen",
+    "Fourteen",
+    "Fifteen",
+  ];
+
+  const links = Array.from({ length: 15 }, (_, index) => ({
+    content: `Link ${numberWords[index]}`,
+  }));
+
+  return (
+    <div className=" bg-black border border-black text-white block py-14 w-full">
+      <div className=" flex text-base px-12 pb-12">
+        <img src={white_logo} alt="" className=" flex size-14 w-24" />
+        <div className=" flex mx-16">
+          <div className=" grid grid-cols-3">
+            {links.map((link, index) => (
+              <p key={index} className=" my-3 mx-28">
+                {link.content}
+              </p>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className=" flex justify-between mx-12 items-center">
+        <p>&copy; 2024 MPPL. All rights reserved.</p>
+        <div className=" flex gap-4">
+        <img src={Facebook} />
+        <img src={Instagram} />
+        <img src={X} />
+        <img src={Linkedin} />
+        <img src={Youtube} /></div>
       </div>
     </div>
   );

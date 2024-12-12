@@ -167,7 +167,7 @@ const Navbar = () => {
   return (
     <div className=" flex items-center justify-between py-5 font-medium">
       <Link to="/">
-        <img src={assets.logo} alt="Logo" className=" w-36" />
+        <img src={assets.logo} alt="Logo" className=" w-24" />
       </Link>
       <ul className=" hidden sm:flex gap-5 text-sm to-gray-700">
         <NavLink to="/" className=" flex flex-col items-center gap-1">
@@ -192,14 +192,14 @@ const Navbar = () => {
           src={assets.search_icon}
           alt=""
           onClick={() => setShowSearch(true)}
-          className=" w-5 cursor-pointer"
+          className=" w-7 cursor-pointer"
         />
         <div className=" group relative:">
           <img
             onClick={() => (token ? null : navigate("/login"))}
             src={assets.profile_icon}
             alt=""
-            className=" w-5 cursor-pointer"
+            className=" w-7 cursor-pointer"
           />
           {token && (
             <div className=" group-hover:block hidden absolute dropdown-menu right-auto pt-4">
@@ -217,8 +217,8 @@ const Navbar = () => {
           )}
         </div>
         <Link to="/cart" className=" relative">
-          <img src={assets.cart_icon} alt="" className=" w-5 min-w-5" />
-          <p className=" absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
+          <img src={assets.cart_icon} alt="" className=" w-8 min-w-5" />
+          <p className=" absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-red-600 text-white aspect-square rounded-full text-[8px]">
             {getCartCount()}
           </p>
         </Link>
