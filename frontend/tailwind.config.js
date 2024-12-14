@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage : {
+        'hero': "url('/src/assets/hero.jpg')",
+      },
       colors: {
         neonGreen: "#D6FF38",
         neonPurple: "#7000FF",

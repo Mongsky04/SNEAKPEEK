@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import { assets } from "../assets/assets";
 
 const Hero = () => {
@@ -21,6 +21,36 @@ const Hero = () => {
       </div>
 
       <img src={assets.hero_img} alt="" className=" w-full sm:w-1/2" />
+    </div>
+  );
+};
+
+export default Hero;*/
+
+
+import React from "react";
+import { assets } from "../assets/assets";
+import hero from "../assets/hero.jpg"
+
+const Hero = () => {
+  return (
+    <div>
+      <div
+        className="w-full min-h-screen bg-cover bg-center text-white flex items-center justify-start"
+        style={{ backgroundImage: `url(${hero})` }}
+      >
+        <div className=" text-6xl font-bold mx-7">
+          <p className=" mb-2">Your</p>
+          <p className=" mb-2">Gateway to </p>
+          <p className=" mb-2">Exclusive </p>
+          <p className=" mb-2">Sneakers.</p>
+        </div>
+      </div>
+      <div className=" bg-black flex uppercase text-5xl font-bold justify-center items-center h-28">
+        <p className=" text-neonGreen mx-3"> Lorem Ipsum</p>
+        <p className="text-gray-300 mx-3">Lorem Ipsum</p>
+        <p className=" text-white mx-3">Lorem Ipsum</p>
+      </div>
     </div>
   );
 };
