@@ -44,7 +44,7 @@ const NewsletterBox = () => {
   };
 
   return (
-    <div className=" flex justify-between bg-neonPurple">
+    <div className=" flex justify-between bg-neonPurple ">
       <p className=" text-5xl text-white font-semibold m-7">Medium length heading goes here</p>
       <div className=" m-7">
         <p className=" text-xl font-medium text-white mb-2">
