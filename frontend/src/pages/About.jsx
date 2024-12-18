@@ -80,6 +80,13 @@ import NewsletterBox from "../components/NewsletterBox";
 import placeimg from "../assets/placeimg.png";
 import Instagram from "../assets/Instagram.png";
 import Linkedin from "../assets/Linkedin.png";
+import najwan from "../assets/najwan.png";
+import akmal from "../assets/akmal.png";
+import aufar from "../assets/aufar.png";
+import rayssa from "../assets/rayssa.png";
+import zaky from "../assets/zaky.png";
+
+
 const About = () => {
   return (
     <div>
@@ -91,14 +98,12 @@ const About = () => {
       <div className=" flex justify-center items-center gap-20 my-20">
         <div className=" justify-center items-center text-center block">
           <div className=" flex items-center justify-center">
-            <img src={placeimg} className=" w-20" />
+            <img src={aufar} className=" w-20" />
           </div>
-          <p className=" font-semibold mt-3">Full name</p>
-          <p className=" mb-3">Job title</p>
+          <p className=" font-semibold mt-3">Abdul Faris Aufar</p>
+          <p className=" mb-3">2310511154</p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur <br /> adipisicing elit.
-            Inventore adipisci quidem perferendis. <br /> Ullam reiciendis vel,
-            odio totam.
+            System Analyst & UI/UX Designer
           </p>
           <div className=" justify-center flex items-center gap-3 mt-4">
             <img src={Instagram} className=" w-6 bg-black rounded-md" />
@@ -108,14 +113,12 @@ const About = () => {
 
         <div className=" justify-center items-center text-center block">
           <div className=" flex items-center justify-center">
-            <img src={placeimg} className=" w-20" />
+            <img src={najwan} className=" w-20 rounded-full" />
           </div>
-          <p className=" font-semibold mt-3">Full name</p>
-          <p className=" mb-3">Job title</p>
+          <p className=" font-semibold mt-3">Muhamad Najwan</p>
+          <p className=" mb-3">2310511149</p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur <br /> adipisicing elit.
-            Inventore adipisci quidem perferendis. <br /> Ullam reiciendis vel,
-            odio totam.
+            Project Manager & UI/UX Designer
           </p>
           <div className=" justify-center flex items-center gap-3 mt-4">
             <img src={Instagram} className=" w-6 bg-black rounded-md" />
@@ -125,14 +128,12 @@ const About = () => {
 
         <div className=" justify-center items-center text-center block">
           <div className=" flex items-center justify-center">
-            <img src={placeimg} className=" w-20" />
+            <img src={rayssa} className=" w-20 rounded-full" />
           </div>
-          <p className=" font-semibold mt-3">Full name</p>
-          <p className=" mb-3">Job title</p>
+          <p className=" font-semibold mt-3">Rayssa Modeline Joy Simanungkalit</p>
+          <p className=" mb-3">2310511151</p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur <br /> adipisicing elit.
-            Inventore adipisci quidem perferendis. <br /> Ullam reiciendis vel,
-            odio totam.
+            QA & Product Owner
           </p>
           <div className=" justify-center flex items-center gap-3 mt-4">
             <img src={Instagram} className=" w-6 bg-black rounded-md" />
@@ -144,14 +145,12 @@ const About = () => {
       <div className=" flex gap-40 justify-center items-center my-20">
         <div className=" justify-center items-center text-center block">
           <div className=" flex items-center justify-center">
-            <img src={placeimg} className=" w-20" />
+            <img src={akmal} className=" w-20 rounded-full" />
           </div>
-          <p className=" font-semibold mt-3">Full name</p>
-          <p className=" mb-3">Job title</p>
+          <p className=" font-semibold mt-3">Muhamad Akmal Al Fatah</p>
+          <p className=" mb-3">2310511165</p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur <br /> adipisicing elit.
-            Inventore adipisci quidem perferendis. <br /> Ullam reiciendis vel,
-            odio totam.
+            Product Owner & UI/UX Designer
           </p>
           <div className=" justify-center flex items-center gap-3 mt-4">
             <img src={Instagram} className=" w-6 bg-black rounded-md" />
@@ -161,14 +160,12 @@ const About = () => {
 
         <div className=" justify-center items-center text-center block">
           <div className=" flex items-center justify-center">
-            <img src={placeimg} className=" w-20" />
+            <img src={zaky} className=" w-20" />
           </div>
-          <p className=" font-semibold mt-3">Full name</p>
-          <p className=" mb-3">Job title</p>
+          <p className=" font-semibold mt-3">Muhamad Zaky Ramadhan</p>
+          <p className=" mb-3">2310511159</p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur <br /> adipisicing elit.
-            Inventore adipisci quidem perferendis. <br /> Ullam reiciendis vel,
-            odio totam.
+            Developer & System Analyst
           </p>
           <div className=" justify-center flex items-center gap-3 mt-4">
             <img src={Instagram} className=" w-6 bg-black rounded-md" />

@@ -77,7 +77,7 @@ const Footer = () => {
   }));
 
   return (
-    <div className=" bg-black border border-black text-white block py-14 w-full">
+    <div className=" bg-black border border-black text-white block py-14 mt-20 w-full ">
       <div className=" flex text-base px-12 pb-12">
         <img src={white_logo} alt="" className=" flex size-14 w-24" />
         <div className=" flex mx-16">
