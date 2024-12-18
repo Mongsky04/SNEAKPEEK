@@ -11,9 +11,9 @@ const Contact = () => {
       </div>
       <div className=" my-10 flex flex-col justify-center md:flex-row gap-10 mb-28">
         <img
-          src={assets.contact_img}
+          src={assets.hero_img}
           alt=""
-          className=" w-full md:max-w-[480px]"
+          className=" w-full md:max-w-[480px] object-cover"
         />
         <div className=" flex flex-col justify-center items-start gap-6">
           <p className=" font-semibold text-xl text-gray-600">Our Store</p>
@@ -21,15 +21,15 @@ const Contact = () => {
             54709 Willms Station <br /> Suite 350, Washinton, USA
           </p>
           <p className=" text-gray-500">
-            Tel: (415) 555-5552 <br /> Email: admin@forever.com
+            Tel: (415) 555-5552 <br /> Email: admin@sneakpeek.com
           </p>
           <p className=" font-semibold text-xl text-gray-600">
-            Careers at Forever
+            Careers at Sneakpeek
           </p>
           <p className=" text-gray-500">
             Learn more about our team and job openings.
           </p>
-          <button className=" border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500">
+          <button className=" border border-black px-8 py-4 text-sm hover:bg-neonGreen hover:text-black transition-all duration-500">
             Explore Jobs
           </button>
         </div>
