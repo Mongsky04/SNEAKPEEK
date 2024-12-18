@@ -286,7 +286,6 @@ const Add = ({ token }) => {
 
 export default Add;*/
 
-
 import React, { useState } from "react";
 import { assets } from "../assets/assets";
 import axios from "axios";
@@ -450,14 +449,15 @@ const Add = ({ token }) => {
         </div>
 
         <div>
-          <p className=" mb-2">Sub Category</p>
+          <p className=" mb-2">Brands</p>
           <select
             onChange={(e) => setSubCategory(e.target.value)}
             className=" w-full px-3 py-2"
           >
-            <option value="Topwear">Topwear</option>
-            <option value="Bottomwear">Bottomwear</option>
-            <option value="Winterwear">Winterwear</option>
+            <option value="Converse">Converse</option>
+            <option value="NewBalance">NewBalance</option>
+            <option value="Nike">Nike</option>
+            <option value="Adidas">Adidas</option>
           </select>
         </div>
 
@@ -479,76 +479,76 @@ const Add = ({ token }) => {
           <div
             onClick={() =>
               setSizes((prev) =>
-                prev.includes("S")
-                  ? prev.filter((item) => item !== "S")
-                  : [...prev, "S"]
+                prev.includes("39")
+                  ? prev.filter((item) => item !== "39")
+                  : [...prev, "39"]
               )
             }
           >
             <p
-              className={` ${sizes.includes("S") ? " bg-neonPurple" : " bg-slate-200"} px-3 py-1 cursor-pointer`}
+              className={` ${sizes.includes("39") ? " bg-neonPurple" : " bg-slate-200"} px-3 py-1 cursor-pointer`}
             >
-              S
+              39
             </p>
           </div>
           <div
             onClick={() =>
               setSizes((prev) =>
-                prev.includes("M")
-                  ? prev.filter((item) => item !== "M")
-                  : [...prev, "M"]
+                prev.includes("40")
+                  ? prev.filter((item) => item !== "40")
+                  : [...prev, "40"]
               )
             }
           >
             <p
-              className={` ${sizes.includes("M") ? " bg-neonPurple" : " bg-slate-200"} px-3 py-1 cursor-pointer`}
+              className={` ${sizes.includes("40") ? " bg-neonPurple" : " bg-slate-200"} px-3 py-1 cursor-pointer`}
             >
-              M
+              40
             </p>
           </div>
           <div
             onClick={() =>
               setSizes((prev) =>
-                prev.includes("L")
-                  ? prev.filter((item) => item !== "L")
-                  : [...prev, "L"]
+                prev.includes("41")
+                  ? prev.filter((item) => item !== "41")
+                  : [...prev, "41"]
               )
             }
           >
             <p
-              className={` ${sizes.includes("L") ? " bg-neonPurple" : " bg-slate-200"} px-3 py-1 cursor-pointer`}
+              className={` ${sizes.includes("41") ? " bg-neonPurple" : " bg-slate-200"} px-3 py-1 cursor-pointer`}
             >
-              L
+              41
             </p>
           </div>
           <div
             onClick={() =>
               setSizes((prev) =>
-                prev.includes("XL")
-                  ? prev.filter((item) => item !== "XL")
-                  : [...prev, "XL"]
+                prev.includes("42")
+                  ? prev.filter((item) => item !== "42")
+                  : [...prev, "42"]
               )
             }
           >
             <p
-              className={` ${sizes.includes("XL") ? " bg-neonPurple" : " bg-slate-200"} px-3 py-1 cursor-pointer`}
+              className={` ${sizes.includes("42") ? " bg-neonPurple" : " bg-slate-200"} px-3 py-1 cursor-pointer`}
             >
-              XL
+              42
             </p>
           </div>
           <div
             onClick={() =>
               setSizes((prev) =>
-                prev.includes("XXL")
-                  ? prev.filter((item) => item !== "XXL")
-                  : [...prev, "XXL"]
+                prev.includes("43")
+                  ? prev.filter((item) => item !== "43")
+                  : [...prev, "43"]
               )
             }
           >
             <p
-              className={` ${sizes.includes("XXL") ? " bg-neonPurple" : "bg-slate-200"} px-3 py-1 cursor-pointer`}
+              className={` ${sizes.includes("43") ? " bg-neonPurple" : "bg-slate-200"} px-3 py-1 cursor-pointer`}
             >
-              XXL
+              43
             </p>
           </div>
         </div>

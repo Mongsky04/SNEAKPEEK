@@ -195,7 +195,6 @@ const Collection = () => {
 
 export default Collection;*/
 
-
 import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
@@ -347,7 +346,7 @@ const Collection = () => {
             <p className=" flex gap-2">
               <input
                 type="checkbox"
-                value={"Topwear"}
+                value={"NewBalance"}
                 onChange={toggleSubCategory}
                 className=" w-3"
               />
@@ -356,7 +355,7 @@ const Collection = () => {
             <p className=" flex gap-2">
               <input
                 type="checkbox"
-                value={"Bottomwear"}
+                value={"Nike"}
                 onChange={toggleSubCategory}
                 className=" w-3"
               />
@@ -365,7 +364,7 @@ const Collection = () => {
             <p className=" flex gap-2">
               <input
                 type="checkbox"
-                value={"Winterwear"}
+                value={"Adidas"}
                 onChange={toggleSubCategory}
                 className=" w-3"
               />
@@ -374,7 +373,7 @@ const Collection = () => {
             <p className=" flex gap-2">
               <input
                 type="checkbox"
-                value={"Winterwear"}
+                value={"Converse"}
                 onChange={toggleSubCategory}
                 className=" w-3"
               />
@@ -414,4 +413,3 @@ const Collection = () => {
 };
 
 export default Collection;
-
