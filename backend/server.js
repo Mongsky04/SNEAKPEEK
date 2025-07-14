@@ -20,8 +20,8 @@ connectCloudinary();
 // 1. Configure Body Parser to handle large payloads
 // This is essential for the "413 Content Too Large" error.
 // Set a generous limit. '50mb' is a good starting point for images.
-app.use(express.json({ limit: '50mb' })); // For JSON bodies
-app.use(express.urlencoded({ limit: '50mb', extended: true })); // For URL-encoded bodies
+app.use(express.json({ limit: '100mb' }));
+app.use(express.urlencoded({ limit: '100mb', extended: true }));
 
 // 2. Configure CORS
 // This is essential for the "No 'Access-Control-Allow-Origin'" error.
