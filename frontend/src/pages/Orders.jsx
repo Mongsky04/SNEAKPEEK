@@ -94,11 +94,11 @@ const Orders = () => {
 export default Orders;*/
 
 
+// eslint-disable-next-line no-unused-vars
 import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "../components/Title";
 import axios from "axios";
-import { data } from "react-router-dom";
 
 const Orders = () => {
   const { backendUrl, token, currency } = useContext(ShopContext);
@@ -126,7 +126,8 @@ const Orders = () => {
         });
         setorderData(allOrdersItem.reverse());
       }
-    } catch (error) {}
+      // eslint-disable-next-line no-unused-vars
+    } catch (error) { /* empty */ }
   };
 
   useEffect(() => {

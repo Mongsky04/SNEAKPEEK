@@ -45,12 +45,13 @@ const Footer = () => {
 
 export default Footer;*/
 
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import white_logo from "../assets/white_logo.png";
 import Facebook from "../assets/Facebook.png"
 import Instagram from "../assets/Instagram.png"
 import X from "../assets/X.png"
-import Linkedin from "../assets/Linkedin.png"
+import Linkedin from "../assets/LinkedIn.png"
 import Youtube from "../assets/Youtube.png"
 
 const Footer = () => {

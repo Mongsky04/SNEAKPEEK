@@ -73,13 +73,12 @@ const About = () => {
 
 export default About;*/
 
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import Title from "../components/Title";
-import { assets } from "../assets/assets";
 import NewsletterBox from "../components/NewsletterBox";
-import placeimg from "../assets/placeimg.png";
 import Instagram from "../assets/Instagram.png";
-import Linkedin from "../assets/Linkedin.png";
+import Linkedin from "../assets/LinkedIn.png";
 import najwan from "../assets/najwan.png";
 import akmal from "../assets/akmal.png";
 import aufar from "../assets/aufar.png";
