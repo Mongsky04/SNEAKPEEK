@@ -51,7 +51,7 @@ import white_logo from "../assets/white_logo.png";
 import Facebook from "../assets/Facebook.png"
 import Instagram from "../assets/Instagram.png"
 import X from "../assets/X.png"
-import Linkedin from "../assets/LinkedIn.png"
+import Linkedin from "../assets/LinkedIn.png";
 import Youtube from "../assets/Youtube.png"
 
 const Footer = () => {
