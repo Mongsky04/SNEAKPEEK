@@ -18,7 +18,8 @@ app.use(express.json());
 app.use(cors({
   origin: ["https://sneakpeek-6lng.vercel.app"],
   methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  // FIX: Add 'token' to the allowedHeaders array
+  allowedHeaders: ["Content-Type", "Authorization", "token"]
 }));
 
 app.use("/api/user", userRouter);
