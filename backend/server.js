@@ -1,5 +1,5 @@
 import express from "express";
-import cors from "cors";
+import cors from "cors"; // Make sure cors is imported
 import "dotenv/config";
 import connectDB from "./config/mongodb.js";
 import connectCloudinary from "./config/caloudinary.js";
@@ -15,15 +15,19 @@ connectDB();
 connectCloudinary();
 
 app.use(express.json());
+
+// --- THIS IS THE CRITICAL PART FOR CORS ---
 app.use(cors({
-  origin: ["https://sneakpeek-6lng.vercel.app"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  // FIX: Add 'token' to the allowedHeaders array
-  allowedHeaders: ["Content-Type", "Authorization", "token"]
+  // Make sure both frontend origins are included
+  origin: ["https://sneakpeek-frontend.vercel.app", "https://sneakpeek-6lng.vercel.app"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Add OPTIONS if not already there, for preflight requests
+  allowedHeaders: ["Content-Type", "Authorization", "token"], // Make sure all custom headers your frontend sends are listed
+  credentials: true // Set to true if your frontend sends cookies or HTTP authentication
 }));
+// ------------------------------------------
 
 app.use("/api/user", userRouter);
-app.use("/api/product", productRouter);
+app.use("/api/product", productRouter); // This includes the /list endpoint
 app.use("/api/cart", cartRoute);
 app.use("/api/order", orderRoute);
 
