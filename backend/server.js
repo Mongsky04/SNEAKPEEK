@@ -1,5 +1,5 @@
 import express from "express";
-import cors from "cors"; // Make sure cors is imported
+import cors from "cors";
 import "dotenv/config";
 import connectDB from "./config/mongodb.js";
 import connectCloudinary from "./config/caloudinary.js";
@@ -14,20 +14,21 @@ const port = process.env.PORT || 5000;
 connectDB();
 connectCloudinary();
 
-app.use(express.json());
+// Increase the limit for JSON and URL-encoded bodies
+// You can adjust '50mb' to whatever size you deem necessary for your application.
+// If you're uploading files, ensure this limit is greater than your largest expected file.
+app.use(express.json({ limit: '50mb' })); // Allow JSON bodies up to 50MB
+app.use(express.urlencoded({ limit: '50mb', extended: true })); // Allow URL-encoded bodies up to 50MB
 
-// --- THIS IS THE CRITICAL PART FOR CORS ---
 app.use(cors({
-  // Make sure both frontend origins are included
   origin: ["https://sneakpeek-frontend.vercel.app", "https://sneakpeek-6lng.vercel.app"],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Add OPTIONS if not already there, for preflight requests
-  allowedHeaders: ["Content-Type", "Authorization", "token"], // Make sure all custom headers your frontend sends are listed
-  credentials: true // Set to true if your frontend sends cookies or HTTP authentication
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization", "token"],
+  credentials: true
 }));
-// ------------------------------------------
 
 app.use("/api/user", userRouter);
-app.use("/api/product", productRouter); // This includes the /list endpoint
+app.use("/api/product", productRouter);
 app.use("/api/cart", cartRoute);
 app.use("/api/order", orderRoute);
 
