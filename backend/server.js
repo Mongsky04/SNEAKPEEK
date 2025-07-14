@@ -20,11 +20,19 @@ connectCloudinary();
 app.use(express.json({ limit: '50mb' })); // Allow JSON bodies up to 50MB
 app.use(express.urlencoded({ limit: '50mb', extended: true })); // Allow URL-encoded bodies up to 50MB
 
+const cors = require('cors');
+
+// Allow requests from your frontend domain
 app.use(cors({
-  origin: ["https://sneakpeek-frontend.vercel.app", "https://sneakpeek-6lng.vercel.app"],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization", "token"],
-  credentials: true
+  origin: 'https://sneakpeek-6lng.vercel.app',
+  methods: ['POST', 'GET', 'DELETE', 'PUT'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+app.use(cors({
+  origin: 'https://sneakpeek-frontend.vercel.app',
+  methods: ['POST', 'GET', 'DELETE', 'PUT'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use("/api/user", userRouter);
