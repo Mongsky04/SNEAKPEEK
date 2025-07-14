@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import "dotenv/config";
 import connectDB from "./config/mongodb.js";
-import connectCloudinary from "./config/caloudinary.js"; // Pastikan path ini benar
+import connectCloudinary from "./config/caloudinary.js";
 import userRouter from "./routes/userRoute.js";
 import productRouter from "./routes/productRoute.js";
 import cartRoute from "./routes/cartRoute.js";
@@ -11,54 +11,57 @@ import orderRoute from "./routes/orderRoute.js";
 const app = express();
 const port = process.env.PORT || 5000;
 
-// Koneksi ke Database dan Cloudinary
+// Connect to Database and Cloudinary
 connectDB();
 connectCloudinary();
 
-// --- PENTING: Konfigurasi Body Parser dan CORS di sini ---
+// --- CRITICAL CONFIGURATIONS START HERE ---
 
-// 1. Konfigurasi Body Parser untuk menangani payload besar
-// Ini penting untuk mengatasi error 413 (Content Too Large)
-// Sesuaikan '50mb' sesuai kebutuhan Anda. Jika ada upload gambar/file besar, ini sangat krusial.
-app.use(express.json({ limit: '50mb' })); // Untuk JSON body
-app.use(express.urlencoded({ limit: '50mb', extended: true })); // Untuk URL-encoded body (jika menggunakan form biasa)
+// 1. Configure Body Parser to handle large payloads
+// This is essential for the "413 Content Too Large" error.
+// Set a generous limit. '50mb' is a good starting point for images.
+app.use(express.json({ limit: '50mb' })); // For JSON bodies
+app.use(express.urlencoded({ limit: '50mb', extended: true })); // For URL-encoded bodies
 
-// 2. Konfigurasi CORS
-// Ini penting untuk mengatasi 'Access-Control-Allow-Origin' dan header 'token'
-// Pastikan semua origin frontend Anda terdaftar di sini
+// 2. Configure CORS
+// This is essential for the "No 'Access-Control-Allow-Origin'" error.
+// Ensure ALL your frontend origins are explicitly listed.
 const allowedOrigins = [
-  "https://sneakpeek-frontend.vercel.app", // Frontend utama Anda
-  "https://sneakpeek-6lng.vercel.app"      // Admin panel atau frontend lainnya
-  // Tambahkan origin lain jika ada, contoh: "http://localhost:3000" saat development
+  "https://sneakpeek-frontend.vercel.app", // Your main frontend
+  "https://sneakpeek-6lng.vercel.app",      // Your admin panel
+  // Add other local development origins if needed, e.g., "http://localhost:3000"
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Memungkinkan request tanpa origin (misal: Postman, atau dari file lokal)
+    // Allow requests with no origin (like Postman or local file access)
     if (!origin) return callback(null, true);
+    // Check if the requesting origin is in our allowed list
     if (allowedOrigins.indexOf(origin) === -1) {
       const msg = `The CORS policy for this site does not allow access from the specified Origin: ${origin}`;
+      // Log the rejected origin for debugging
+      console.error(msg);
       return callback(new Error(msg), false);
     }
     return callback(null, true);
   },
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Pastikan semua method HTTP yang Anda gunakan terdaftar, termasuk OPTIONS untuk preflight
-  allowedHeaders: ["Content-Type", "Authorization", "token"], // Pastikan semua custom header yang dikirim frontend terdaftar, termasuk 'token'
-  credentials: true // Set ke 'true' jika frontend mengirim cookies atau header otentikasi (misal JWT di header Authorization)
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Explicitly list all HTTP methods used, including OPTIONS for preflight
+  allowedHeaders: ["Content-Type", "Authorization", "token", "X-Requested-With", "Accept"], // Ensure all custom headers and common headers are allowed. 'token' is crucial for your case.
+  credentials: true // Set to 'true' if your frontend sends cookies or Authorization headers (like JWT)
 }));
 
-// --- Akhir Konfigurasi ---
+// --- CRITICAL CONFIGURATIONS END HERE ---
 
-// Definisikan rute API Anda
+// Define your API routes
 app.use("/api/user", userRouter);
-app.use("/api/product", productRouter);
+app.use("/api/product", productRouter); // This includes your /add endpoint
 app.use("/api/cart", cartRoute);
 app.use("/api/order", orderRoute);
 
-// Rute dasar untuk mengecek apakah API berjalan
+// Basic route to check if API is working
 app.get("/", (req, res) => {
   res.send("API WORKING");
 });
 
-// Mulai server
+// Start the server
 app.listen(port, () => console.log("Server Started on PORT : " + port));
