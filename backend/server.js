@@ -17,8 +17,8 @@ connectCloudinary();
 app.use(express.json());
 app.use(cors({
   origin: [
-    "https://sneakpeek-frontend.vercel.app", // client frontend
-    "https://sneakpeek-6lng.vercel.app"   // admin dashboard
+    "https://sneakpeek-6lng.vercel.app",  // admin dashboard
+    "https://sneakpeek-frontend.vercel.app" // client frontend
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
